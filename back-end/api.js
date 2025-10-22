@@ -9,7 +9,9 @@ const app = express();
 //PORT es el número de puerto donde va a correr el backend
 const PORT = 3000;
 
+//app.use(cors()): activa CORS para aceptar peticiones desde cualquier origen
 app.use(cors());
+//app.use(express.json()): permite que Express entienda los datos en formato JSON
 app.use(express.json());
 
 //base de datos 
@@ -20,6 +22,7 @@ let productos = [
 ];
 //get
 app.get('/api/productos',(req,res) => {
+    //res.json(productos): responde al cliente con la lista completa de productos en formato JSON.
     res.json(productos);
 });
 
@@ -45,6 +48,7 @@ app.post('/api/productos',(req,res) => {
     }
 
     //crear nuevo id (tomar el mayor id actual +1)
+    //Si hay productos, toma el ID más grande y súmale 1; si no hay productos, el nuevo ID será 1.
     const nuevoId = productos.length ? Math.max(...productos.map(p => p.id)) + 1 :1;
     const nuevoProducto = {id: nuevoId,nombre,precio};
 
