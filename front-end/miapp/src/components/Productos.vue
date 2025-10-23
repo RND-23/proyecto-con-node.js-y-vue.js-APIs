@@ -3,9 +3,9 @@
     <h1>Administracion de productos</h1>
 
     <!--formulario para añadir producto-->
-                          <!--@submit = escucha el evento submit del formulario.--->
-                          <!--función que se ejecutará cuando se envíe el form.--->
-                          <!--función que se ejecutará cuando se envíe el form.--->
+    <!--@submit = escucha el evento submit del formulario.--->
+    <!--función que se ejecutará cuando se envíe el form.--->
+     <!--función que se ejecutará cuando se envíe el form.--->
     <form @submit.prevent="agregarProducto">
       <!--v-model crea vinculación bidireccional con la variable nuevoProducto.nombre-->
       <input v-model="nuevoProducto.nombre" placeholder="Nombre" required></input>
