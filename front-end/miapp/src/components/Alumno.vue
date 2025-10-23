@@ -1,6 +1,7 @@
 <template>
 <div class="container">
     <h1>Mantenimiento Alumnos</h1>
+    <!-- formulario para agregar nuevo alumno -->
     <form @submit.prevent="agregarAlumno">
       <input v-model="nuevoAlumno.nombre" placeholder="Nombre" required></input>
       <input v-model.number="nuevoAlumno.edad" placeholder="Edad" required></input>
@@ -10,7 +11,7 @@
       <button type="submit">Agregar Alumno</button>
     </form>
     <hr></hr>
-
+      <!-- tabla de alumnos -->
     <table border="1">
         <thead>
           <th>ID</th>
@@ -38,7 +39,7 @@
         </tbody>
     </table>
     <hr></hr>
-
+     <!-- mostrar alumno con mejor promedio -->
     <div v-if="mejorAlumno">
         <h3>Mejor Alumno</h3>
         <p>
